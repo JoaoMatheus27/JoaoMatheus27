@@ -1,5 +1,7 @@
 # 💫 About Me:
- I’m currently attend to system developer on senac<br>I’m looking to learn with every possible experience;<br> I’m currently learning front-end but i expect to learn and work with back-end<br> 
+ I’m currently attending to system developer classes at SENAC<br>
+I’m looking foward to learn with every possible experience;<br>
+I’m currently learning front-end but i plan to learn and work with back-end.<br>
 
 
 ## 🌐 Socials:
