@@ -1,0 +1,147 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMYx//fVk67v10Td5AtWMdf",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/JoaoMatheus27/JoaoMatheus27/blob/main/chatgpt%20em%20codigo\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 16,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Ld5fK4xgtMKT",
+        "outputId": "7f100ac4-a34e-472e-a7a5-eec250fc6d0b"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Requirement already satisfied: openai==0.28 in /usr/local/lib/python3.10/dist-packages (0.28.0)\n",
+            "Requirement already satisfied: requests>=2.20 in /usr/local/lib/python3.10/dist-packages (from openai==0.28) (2.31.0)\n",
+            "Requirement already satisfied: tqdm in /usr/local/lib/python3.10/dist-packages (from openai==0.28) (4.66.4)\n",
+            "Requirement already satisfied: aiohttp in /usr/local/lib/python3.10/dist-packages (from openai==0.28) (3.9.5)\n",
+            "Requirement already satisfied: charset-normalizer<4,>=2 in /usr/local/lib/python3.10/dist-packages (from requests>=2.20->openai==0.28) (3.3.2)\n",
+            "Requirement already satisfied: idna<4,>=2.5 in /usr/local/lib/python3.10/dist-packages (from requests>=2.20->openai==0.28) (3.7)\n",
+            "Requirement already satisfied: urllib3<3,>=1.21.1 in /usr/local/lib/python3.10/dist-packages (from requests>=2.20->openai==0.28) (2.0.7)\n",
+            "Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.10/dist-packages (from requests>=2.20->openai==0.28) (2024.2.2)\n",
+            "Requirement already satisfied: aiosignal>=1.1.2 in /usr/local/lib/python3.10/dist-packages (from aiohttp->openai==0.28) (1.3.1)\n",
+            "Requirement already satisfied: attrs>=17.3.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->openai==0.28) (23.2.0)\n",
+            "Requirement already satisfied: frozenlist>=1.1.1 in /usr/local/lib/python3.10/dist-packages (from aiohttp->openai==0.28) (1.4.1)\n",
+            "Requirement already satisfied: multidict<7.0,>=4.5 in /usr/local/lib/python3.10/dist-packages (from aiohttp->openai==0.28) (6.0.5)\n",
+            "Requirement already satisfied: yarl<2.0,>=1.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->openai==0.28) (1.9.4)\n",
+            "Requirement already satisfied: async-timeout<5.0,>=4.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->openai==0.28) (4.0.3)\n"
+          ]
+        }
+      ],
+      "source": [
+        "pip install openai==0.28\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import openai"
+      ],
+      "metadata": {
+        "id": "Hju9ZHY0yEOS"
+      },
+      "execution_count": 17,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "openai.api_key = \"sk-proj-s6IruY5SvtCEfqdPKr3iT3BlbkFJWgJWt4UC20QqlcgVA7K4\""
+      ],
+      "metadata": {
+        "id": "LQJ0OR83yBoT"
+      },
+      "execution_count": 37,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#inicar\n",
+        "conversa = openai.ChatCompletion.create(\n",
+        "    model=\"gpt-3.5-turbo\",\n",
+        "    temperature=1,\n",
+        "    max_tokens=200,\n",
+        "    messages=[\n",
+        "        {\"role\": \"system\", \"content\":\"Você é consultor de carreiras.\"},\n",
+        "        {\"role\": \"user\", \"content\":\"Me diga boas carreiras para a área de TI\"},\n",
+        "    ]\n",
+        ")\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "L9Ee_8whtkrd"
+      },
+      "execution_count": 38,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#exiba a resposta do chat gpt\n",
+        "print(\"Resposta do chat gpt\")\n",
+        "print(conversa.choices[0].message.content)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Wx7PSfeLxuiA",
+        "outputId": "07b091f3-7b70-4537-e0ad-620dfc37d5d9"
+      },
+      "execution_count": 39,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Resposta do chat gpt\n",
+            "Na área de TI, existem diversas carreiras promissoras e bem remuneradas. Aqui estão algumas opções:\n",
+            "\n",
+            "1. Desenvolvedor de software: Profissional responsável por projetar, desenvolver e testar softwares e aplicativos.\n",
+            "   \n",
+            "2. Engenheiro de dados: Especialista em coleta, armazenamento e análise de grandes volumes de dados.\n",
+            "   \n",
+            "3. Administrador de redes: Responsável por manter a infraestrutura de rede de uma organização funcionando de forma eficiente e segura.\n",
+            "   \n",
+            "4. Analista de segurança da informação: Profissional dedicado a identificar e mitigar ameaças de segurança cibernética.\n",
+            "   \n",
+            "5. Arquiteto de soluções em nuvem: Especialista em projetar e implementar soluções baseadas em computação em nuvem.\n",
+            "   \n",
+            "6. Cientista de dados: Profissional que analisa e\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
